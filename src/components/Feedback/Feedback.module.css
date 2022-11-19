@@ -1,0 +1,24 @@
+.btn {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 0.8em 1em calc(0.8em + 3px);
+    border-radius: 15px;
+    background: rgb(11, 194, 250);
+    box-shadow: 0 -3px rgb(6, 123, 231) inset;
+    transition: 0.2s;
+    text-transform: uppercase;
+  }
+  
+  .btn:hover {
+    background: rgb(6, 135, 255);
+  }
+  
+  .btn:active {
+    background: rgb(19, 86, 209);
+    box-shadow: 0 3px rgb(11, 194, 250) inset;
+  }
+  
+  .btn:nth-child(2n) {
+    margin: 0 5px;
+  }
