@@ -49,20 +49,16 @@ const App = () => {
     return positivePercentage;
   };
 
-  render() {
-    const { good, neutral, bad } = this.state;
-    const stateName = Object.keys(this.state);
-    const value = this.countTotalFeedback();
-    const percent = this.countPositiveFeedbackPercentage();
+  const totalFeedbacks = countTotalFeedback();
+  const positivePercentage = countPositiveFeedbackPercentage();
+  const options = ['good', 'neutral', 'bad'];
 
-    console.log(value);
-
-    return (
+  return (
       <div className={style.wrapper}>
         <Section title="Please leave feedback">
           <Feedback
             options={stateName}
-            onLeaveFeedback={this.handleIncrement}
+            onLeaveFeedback={onFeedbackBtnClick}
           />
         </Section>
 
