@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import style from 'components/Statistics/Statistics.module.css';
 
-function Statistics({ good, neutral, bad, total, positivePercentage }) {
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     return (
         <ul className={style.list}>
             <li>Good: {good}</li>
