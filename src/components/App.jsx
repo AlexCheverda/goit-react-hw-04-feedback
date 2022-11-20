@@ -26,15 +26,7 @@ const App = () => {
     }
   };
 
-
-  // handleIncrement = option => {
-  //   this.setState(prevState => {
-  //     return { [option]: prevState[option] + 1 };
-  //   });
-  // };
-
   const countTotalFeedback = () => {
-    // const totalValue = Object.values(this.state);
     return good + neutral + bad;
   };
 
@@ -42,10 +34,6 @@ const App = () => {
     const positivePercentage = Number(
       ((good / countTotalFeedback()) * 100).toFixed(0)
     );
-    // const value = this.countTotalFeedback();
-    // const percentage = Math.round((this.state.good / value) * 100);
-
-    // if (!percentage) return 0;
     return positivePercentage;
   };
 
@@ -54,28 +42,31 @@ const App = () => {
   const options = ['good', 'neutral', 'bad'];
 
   return (
-      <div className={style.wrapper}>
+    <div className={style.wrapper}>
+      <div className={style.feedbacks}>
         <Section title="Please leave feedback">
           <Feedback
-            options={stateName}
+            options={options}
             onLeaveFeedback={onFeedbackBtnClick}
           />
         </Section>
 
         <Section title="Statistics">
-          {value === 0 ? (
+          {totalFeedbacks === 0 ? (
             <Notification message="No feedback given" />
           ) : (
             <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
-              total={value}
-              positivePercentage={percent}
+              total={totalFeedbacks}
+              positivePercentage={positivePercentage}
             />
           )}
         </Section>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default App;
